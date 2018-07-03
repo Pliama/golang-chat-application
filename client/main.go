@@ -1,14 +1,14 @@
 package main
 
 import (
-	"net"
 	"bufio"
 	"fmt"
+	"net"
 	"os"
 	"time"
 )
 
-func main(){
+func main() {
 	conn, err := net.Dial("tcp", "127.0.0.1:8080")
 	if err != nil {
 		if _, t := err.(*net.OpError); t {
@@ -38,7 +38,7 @@ func readConnection(conn net.Conn) {
 		for {
 			ok := scanner.Scan()
 			text := scanner.Text()
-				fmt.Println(text)
+			fmt.Println(text)
 			if !ok {
 				fmt.Println("Reached EOF on server connection.")
 				break
